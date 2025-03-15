@@ -69,3 +69,43 @@ SELECT * FROM orders WHERE STATUS IN ('new', 'cancelled');
 SELECT id,sum FROM orders WHERE products_count > 3;
 
 ![image](https://github.com/user-attachments/assets/0e16251c-47ec-4c6d-80cf-3b0d2180d0cc)
+
+Примеры задач и их решения 
+
+Измените статус (status) заказа под номером (id) 5 с delivery на success.
+
+
+update orders set status='success' where id=5
+
+
+Увеличьте цену 5 самых дешевых товаров на 5%.
+
+update products set price=price*1.05 order by price limit 5
+
+
+теперь самых дорогих:
+
+
+update products set price=price*1.05 order by price desc limit 5
+
+
+В магазин привезли 2 упаковки Сникерса и 2 упаковки Марса. В каждой упаковке по 20 шоколадок. Обновите данные так, чтобы они отражали правильное количество шоколадок.
+
+
+Удалите из таблицы visits все данные с помощью конструкции DELETE.
+
+
+Удалите из таблицы products все товары, которых нет на складе.
+
+
+delete from products where count<1;
+
+
+Удалите из таблицы cars все автомобили начиная с 2010 года и старше
+
+
+delete from cars where year<=2010
+
+Select, update, insert, delete, truncate - обязательно должны присутствовать в шпаргалках.
+
+
