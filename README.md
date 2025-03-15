@@ -1,4 +1,5 @@
 Шпоргалка
+
 Вставка данных в таблицу: INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
 
 Выборка данных из таблицы: SELECT * FROM table_name;
