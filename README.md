@@ -211,35 +211,44 @@ values
 
 
 **Практическая 5**
+
+
 1.Выберите из таблицы orders 4 самых дорогих заказов за всё время. Данные нужно отсортировать в порядке убывания цены. Отмененные заказы не учитывайте.
 
 SELECT * FROM orders WHERE status != 'cancelled' ORDER BY sum DESC LIMIT 4;
+![image](https://github.com/user-attachments/assets/0e56e932-dccc-4e94-afe3-618bdc0d3908)
 
-image
+![image](https://github.com/user-attachments/assets/49c9b422-99e2-4f0e-aa4f-af537540197a)
+
 
 Выберите из таблицы products название и цены четырех самых дешевых товаров, которые есть на складе
 SELECT name, price FROM products WHERE count > 0 ORDER BY price ASC LIMIT 4;
 
-image
+![image](https://github.com/user-attachments/assets/2b3879d1-22d3-477e-8978-4360b25dbbcd)
 
 3.Выберите из таблицы orders три последних заказа (по дате date) стоимостью от 3200 рублей и выше. Данные отсортируйте по дате в обратном порядке.
 
 SELECT * FROM orders WHERE sum >= 3200 ORDER BY date DESC LIMIT 3;
+![image](https://github.com/user-attachments/assets/460b5aff-abe9-4032-88ad-4987fd993cab)
 
-image
 
-Создайте дтаблицу: image
+
+Создайте дтаблицу: 
+![image](https://github.com/user-attachments/assets/a12172ed-1442-4190-a1a3-6d840ae47600)
+
 CREATE TABLE products ( id INT PRIMARY KEY, name VARCHAR(255), count INT, price DECIMAL(10, 2) );
 
 INSERT INTO products (id, name, count, price) VALUES (1, 'Стиральная машина', 5, 10000.00), (2, 'Холодильник', 0, 10000.00), (3, 'Микроволновка', 3, 4000.00), (4, 'Пылесос', 2, 4500.00), (5, 'Вентилятор', 0, 700.00), (6, 'Телевизор', 7, 31740.00), (7, 'Тостер', 2, 2500.00), (8, 'Принтер', 4, 3000.00), (9, 'Активные колонки', 1, 2900.00), (10, 'Ноутбук', 4, 36990.00), (11, 'Посудомоечная машина', 0, 17800.00), (12, 'Видеорегистратор', 23, 4000.00), (13, 'Смартфон', 8, 12300.00), (14, 'Флешка', 4, 1400.00), (15, 'Блендер', 0, 5500.00), (16, 'Газовая плита', 5, 11900.00), (17, 'Клавиатура', 3, 1800.00);
 
-image
+![image](https://github.com/user-attachments/assets/bfe09f98-c486-4e15-ad01-983dc2f14530)
+
 
 Из этой таблицы сделать выборку на основе задания: Сайт выводит товары по 5 штук. Выберите из таблицы products товары, которые пользователи увидят на 3 странице каталога при сортировке в порядке возрастания цены (price).
 
 SELECT name, price FROM products ORDER BY price ASC LIMIT 5 OFFSET 10;
 
-image
+![image](https://github.com/user-attachments/assets/68fbf47b-8d21-4b78-b951-060fab834327)
+
 SELECT name,price,country FROM products 
 WHERE (find_in_set ('RU',country) OR find_in_set ('BY',country)) AND category_id IS NOT NULL ORDER BY price DESC
 
