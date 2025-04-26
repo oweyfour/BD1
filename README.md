@@ -135,6 +135,41 @@ MEDIUMBLOB: хранит бинарные данные в виде строки 
 
 LONGBLOB: хранит бинарные данные в виде строки длиной до 4 ГБ
 
+Создайте таблицу users с со следующими полями:
+
+id — идентификатор, целое положительное, первичный ключ без автоинкремента, NULL запрещен.
+first_name — имя пользователя, строка до 50 символов.
+last_name — фамилия пользователя, строка до 50 символов.
+birthday — дата рождения. Пользователь может не указать день рождения и тогда в поле нужно хранить NULL.
+Добавьте 3 записи так, чтобы получалась таблица ниже:
+![image](https://github.com/user-attachments/assets/c71d25c9-f754-4d17-8f8d-af6fd0a679f0)
+
+ CREATE TABLE users (
+id INT(10)UNSIGNED NOT NULL PRIMARY KEY,
+first_name VARCHAR (50) NULL,
+last_name VARCHAR (50) NULL,
+birthday DATE NULL );
+INSERT INTO users (id, first_name, last_name, birthday)
+VALUES (1,'Дмитрий','Иванов',NULL),
+(2,'Анатолий','Белый',NULL),
+(3,'Денис','Давыдов','1995-09-08');
+
+Создайте таблицу orders с автоинкрементальным первичным ключом id, полем state для хранения статуса заказа и полем amount для хранения суммы заказа. Статус заказа умещается в строку длиной 8 символов, а сумма заказа является денежным типом до 1 млн. с двумя знаками после десятичной точки.
+
+Добавьте 3 записи так, чтобы получалась таблица ниже:
+
+![image](https://github.com/user-attachments/assets/7e0b80ec-e6a2-4445-8e68-52b08c2e57ac)
+
+create table orders (
+id int unsigned not null primary key auto_increment,
+state varchar (8),
+amount decimal (8,2)
+);
+insert into orders (state, amount)
+values ('new', 1000.50),
+('new', 3400.10),
+('delivery', 7300.00)
+
 # Практическая 1
 1) Выберите из таблицы orders все заказы
 2) 
