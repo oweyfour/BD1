@@ -295,11 +295,15 @@ UPDATE products SET NAME='PS5' WHERE NAME='IMAC'
 
 Добавьте в таблицу трех пользователей: Дмитрия Иванова, Анатолия Белого и Дениса Давыдова.
 
-image
+![Uploading image.png…]()
+
 
 create table users (id int, first_name varchar (50), last_name varchar(50)); insert into users (id, first_name, last_name) values (1, 'Дмитрий', 'Иванов'), (2, 'Анатолий', 'Белый'), (3, 'Денис','Давыдов');
 
+
 Таблицы
+
+
 Создайте таблицу products для хранения информации о товарах в магазине. Выберите оптимальные поля для хранения данных в соответствии с условиями:
 
 id типа INT – только положительные числа; name – символьный тип до 100 символов; count – количество товара на складе (до 200 штук); price – цена в рублях без копеек (не более 1 млн рублей). Заполните таблицу тремя товарами:
@@ -341,12 +345,13 @@ id типа INT, только положительные числа. name – с
 CREATE TABLE films ( id INT UNSIGNED, name VARCHAR (100), rating FLOAT UNSIGNED, country VARCHAR (2) ); INSERT INTO films (id, name, rating, country) VALUES (1, 'Большая буря', '3.45', 'RU'), (2, 'Игра', '7.5714', 'US'), (3, 'Война', '10', 'RU');
 
 
-
 **Практическая 6 **
 
 
 Создайте таблицу orders для хранения списка заказов: id — идентификатор, целое положительное. user_id — идентификатор пользователя, который оформил заказ. Целое положительное, NULL запрещен. amount — стоимость заказа. Целое положительное число не более 1 млн. NULL запрещен, по умолчанию 0. created — дата и время создания заказа. NULL запрещен. state — статус заказа. Выбор из new, cancelled, in_progress, delivered, completed. Можно выбрать только один вариант. NULL запрещен. По умолчанию должен стоять new. Добавьте 3 записи так, чтобы получалась таблица ниже:
-image
+
+![image](https://github.com/user-attachments/assets/5c089cec-a51f-45b5-8785-a30a0a6a5655)
+
 
 CREATE TABLE orders ( id INTEGER PRIMARY KEY AUTO_INCREMENT, user_id INTEGER NOT NULL, amount INTEGER NOT NULL DEFAULT 0, created DATETIME NOT NULL, state ENUM('new', 'cancelled', 'in_progress', 'delivered', 'completed') NOT NULL DEFAULT 'new', CHECK (user_id > 0), CHECK (amount >= 0 AND amount <= 1000000) );
 
@@ -354,11 +359,13 @@ INSERT INTO orders (user_id, amount, created) VALUES (56, 5400, '2018-02-01 17:4
 
 SELECT * FROM orders;
 
-image
+![image](https://github.com/user-attachments/assets/6d86c78b-524f-42c4-94d7-d16f0c4687f0)
+
 
 2.Создайте таблицу users для хранения списка пользователей сайта: id — идентификатор, целое положительное. first_name — имя, строка до 20 символов. NULL запрещен. last_name — фамилия, строка до 20 символов. NULL запрещен. patronymic — отчество, строка до 20 символов. NULL запрещен, по умолчанию пустая строка. is_active — отметка об активности пользователя. Логическое поле, по умолчанию TRUE. is_superuser — отметка администратора. Логическое поле, по умолчанию FALSE. Добавьте 3 записи так, чтобы получалась таблица
 
-image
+![image](https://github.com/user-attachments/assets/c5b8c40b-23f4-4757-a0ce-66e24deff8be)
+
 
 CREATE TABLE users ( id INTEGER PRIMARY KEY AUTO_INCREMENT, first_name VARCHAR(20) NOT NULL, last_name VARCHAR(20) NOT NULL, patronymic VARCHAR(20) NOT NULL DEFAULT '', is_active BOOLEAN NOT NULL DEFAULT TRUE, is_superuser BOOLEAN NOT NULL DEFAULT FALSE, CHECK (LENGTH(first_name) <= 20), CHECK (LENGTH(last_name) <= 20), CHECK (LENGTH(patronymic) <= 20) );
 
@@ -370,11 +377,13 @@ INSERT INTO users (first_name, last_name, is_active, is_superuser) VALUES ('Ан
 
 SELECT * FROM users;
 
-image
+![image](https://github.com/user-attachments/assets/0c105d8e-f56c-45aa-bcbf-7edf22148b6f)
+
 
 3.Создайте таблицу products для хранения товаров в интернет магазине: id — идентификатор, целое положительное. category_id — категория, целое положительное. Может принимать NULL. По умолчанию NULL. name — название, строка до 100 символов. NULL запрещен. count — количество, целое положительное до 255. NULL запрещен, по умолчанию 0. price — цена типа DECIMAL с 10 знаками, 2 из которых выделены для копеек. NULL запрещен, по умолчанию 0.00. Добавьте 3 записи так, чтобы получалась таблица
 
-image
+![image](https://github.com/user-attachments/assets/f1930e51-5ff9-4b92-b29d-1b7551fae3bb)
+
 
 CREATE TABLE products ( id INTEGER PRIMARY KEY AUTO_INCREMENT, category_id INTEGER NULL DEFAULT NULL, name VARCHAR(100) NOT NULL, count TINYINT UNSIGNED NOT NULL DEFAULT 0, price DECIMAL(10, 2) NOT NULL DEFAULT 0.00, CHECK (category_id > 0 OR category_id IS NULL), CHECK (count >= 0 AND count <= 255), CHECK (price >= 0) );
 
@@ -385,4 +394,5 @@ INSERT INTO products (category_id, name, count, price) VALUES (17, 'Фломас
 INSERT INTO products (name, count, price) VALUES ('Сникерс', 12, 50.80);
 
 SELECT * FROM products;
+![image](https://github.com/user-attachments/assets/869b1388-e5c4-4360-bec5-f3eabfc0f0b4)
 
