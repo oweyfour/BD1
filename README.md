@@ -256,30 +256,34 @@ WHERE (find_in_set ('RU',country) OR find_in_set ('BY',country)) AND category_id
 **Практическая 2**
 
 Выберите из таблицы orders 3 самых дешевых заказа за всё время. Данные нужно отсортировать в порядке убывания цены. Отмененные заказы не учитывайте.
-image
+![image](https://github.com/user-attachments/assets/96a415b7-2678-4ee1-b71e-56b36dd2683b)
+
 
 SELECT * FROM orders WHERE STATUS != 'cancelled' ORDER BY sum ASC LIMIT 3
 
 Выберите из таблицы orders 2 самых дорогих заказов за всё время. Данные нужно отсортировать в порядке убывания цены. Отмененные заказы не учитывайте.
-image
+![image](https://github.com/user-attachments/assets/65fb9cd8-41c5-4c0a-ba92-c89b15f61391)
+
 
 SELECT * FROM orders WHERE STATUS != 'cancelled' ORDER BY SUM desc LIMIT 2
 
 Добавьте в таблицу orders данные о новом заказе стоимостью 8000 рублей. В заказе 4 товара (products).
 
-image
+![image](https://github.com/user-attachments/assets/3aa263b2-d6a1-4a2c-b5d9-8eead0852cea)
+
 
 INSERT INTO orders (id, products, sum) VALUES (6, 4, 8000)
 
 Добавьте в таблицу products новый товар — «VR-очки», стоимостью 70000 рублей в количестве (count) 2 штук.
 
-image
+[image](https://private-user-images.githubusercontent.com/184487511/417961485-2b978fa9-ec10-4b00-84cd-8b497cb545c4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDU2NDY1MDksIm5iZiI6MTc0NTY0NjIwOSwicGF0aCI6Ii8xODQ0ODc1MTEvNDE3OTYxNDg1LTJiOTc4ZmE5LWVjMTAtNGIwMC04NGNkLThiNDk3Y2I1NDVjNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQyNlQwNTQzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZmUwYWM5MDFlYjM1NzZmMjQ2YmY2ZDZhYTUzMDlhYjYyYWI3YTA2YjE4N2UzNjMxOWEzN2MyNzYwZGNkMWEwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.B7EFCd6_RjLYjFZo57oljWvJtOe5DGHwj2TvBQARdRQ)
 
 INSERT INTO products (id,NAME,COUNT,price) VALUE (7, 'VR очки',2,70000)
 
 В таблицу products внесли данные с ошибкой, вместо "PS5" в наименовании написали IMAC. Исправьте ошибку.
 
-image
+![image](https://github.com/user-attachments/assets/e2e7531e-928b-4863-bc32-707b4e03c822)
+
 
 UPDATE products SET NAME='PS5' WHERE NAME='IMAC'
 
