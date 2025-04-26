@@ -276,7 +276,7 @@ INSERT INTO orders (id, products, sum) VALUES (6, 4, 8000)
 
 Добавьте в таблицу products новый товар — «VR-очки», стоимостью 70000 рублей в количестве (count) 2 штук.
 
-[image](https://private-user-images.githubusercontent.com/184487511/417961485-2b978fa9-ec10-4b00-84cd-8b497cb545c4.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDU2NDY1MDksIm5iZiI6MTc0NTY0NjIwOSwicGF0aCI6Ii8xODQ0ODc1MTEvNDE3OTYxNDg1LTJiOTc4ZmE5LWVjMTAtNGIwMC04NGNkLThiNDk3Y2I1NDVjNC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNDI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDQyNlQwNTQzMjlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZmUwYWM5MDFlYjM1NzZmMjQ2YmY2ZDZhYTUzMDlhYjYyYWI3YTA2YjE4N2UzNjMxOWEzN2MyNzYwZGNkMWEwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.B7EFCd6_RjLYjFZo57oljWvJtOe5DGHwj2TvBQARdRQ)
+![image](https://github.com/user-attachments/assets/d8384a2f-1d7f-40d2-8c96-b9b95c2afbfb)
 
 INSERT INTO products (id,NAME,COUNT,price) VALUE (7, 'VR очки',2,70000)
 
